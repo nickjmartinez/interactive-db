@@ -28,7 +28,7 @@ public class TestJDBC {
 	          "(        'Busch', 'Anheuser', 200 ), " +
 	          "(       'Corona',    'Crown', 175 ), " +
 	          "(       'Modela',    'Crown', 225 ), " +
-	          "(          'MGD',   'Miller', 220 ), " +
+	          "(          'MGDA',   'Miller', 220 ), " +
 	          "( 'Miller Light',   'Miller', 110 ), " +
 	          "(   'Wicked Ale',  'Pete\\'s', 200 );";
 
