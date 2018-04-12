@@ -70,8 +70,8 @@ class DBConnection {
     int result = 0;
 
     try {
-      // result = statement.executeUpdate( sql );
-      
+      //result = statement.executeUpdate( sql );
+  
       preparedStatement = connection.prepareStatement( sql );
       result = preparedStatement.executeUpdate();
     }
