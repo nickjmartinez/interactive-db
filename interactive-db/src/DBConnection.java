@@ -3,8 +3,7 @@ import java.sql.*;
 class DBConnection {
 
   private static final String JDBC_DRIVER = "org.mysql.jdbc.Driver";
-  private static final String LOCAL_HOST = "jdbc:mariadb://localhost:3306/";
-
+  
   private String db;
   private String username;
   private String password;
@@ -24,12 +23,25 @@ class DBConnection {
 	this.password = password;
   }
 
+  private String getURL() {
+	String os = System.getProperty("os.name");
+	String LOCAL_HOST;
+	
+	if(os.contains("Windows")) {
+		LOCAL_HOST = "jdbc:mariadb://192.168.1.136:3306/";
+	}else{
+		LOCAL_HOST = "jdbc:mariadb://localhost:3306/";
+	}
+	return LOCAL_HOST;
+	  
+  }
+  
   public boolean openConnection( ) {
 	  boolean result = false;
 
 	try {
-      connection = DriverManager.getConnection( LOCAL_HOST + db, username, password );
-      System.out.println( db + " connected." );
+      connection = DriverManager.getConnection( getURL() + db, username, password );
+      System.out.println("\n" + db + " connected." );
       System.out.println();
       
       // statement = connection.createStatement();
