@@ -60,6 +60,11 @@ public class DBInputer {
 			case "where":
 				System.out.println("In table: "+table);
 				break;
+			case "enter":
+				System.out.print("Enter SQL to submit: ");
+				sql = input.nextLine();
+				dbc.update(sql);
+				break;
 			case "count":
 				rs = dbc.query("SELECT * FROM "+table+";", null);
 				int count = 0;
@@ -111,7 +116,7 @@ public class DBInputer {
 		}
 
 
-
+		dbc.closeConnection();
 	}
 
 }
