@@ -61,14 +61,14 @@ class DBConnection {
     try {
       // rs = statement.executeQuery( sql );
       
-      preparedStatement = connection.prepareStatement( sql );
+      preparedStatement = connection.prepareStatement(sql);
       
       if ( args != null ) {
         for ( i = 0; i < args.length; i++ ) {
           preparedStatement.setString( ( i + 1 ), args[i] );
 	    }
 	  }
-      
+     
       rs = preparedStatement.executeQuery();
     }
     catch ( SQLException sqle ) {
